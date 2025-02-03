@@ -40,7 +40,7 @@ public class Cave implements Serializable {
         try (ObjectOutputStream fileWriter = new ObjectOutputStream(new FileOutputStream(filename))) {
             fileWriter.writeObject(this);
             fileWriter.close();
-            System.out.println("Peli tallennettiin tiedostoon " + filename);
+            System.out.println("Peli tallennettiin tiedostoon " + filename + ".");
         } catch (IOException e) {
             System.out.println("Pelin tallentaminen ei onnistunut.");
             e.printStackTrace();

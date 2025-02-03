@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Anna pelaajan nimi:");
+        System.out.println("Syötä pelaajan nimi:");
         String name = sc.nextLine();
         Player newPlayer = new Player(name);
         Cave cave = new Cave(newPlayer);
@@ -28,6 +28,10 @@ public class App {
                         cave.addMonster(newMonster);
                         break;
                     case 2:
+                        if (cave.getMonsters().isEmpty()) {
+                            System.out.println("Luola on tyhjä.");
+                            break;
+                        }
                         System.out.println("Luolan hirviöt:");
                         cave.listMonsters();
                         break;
