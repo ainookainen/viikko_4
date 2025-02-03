@@ -1,4 +1,3 @@
-// testi
 package main;
 
 import java.io.Serializable;
@@ -19,11 +18,19 @@ public class Monster implements Serializable {
     public boolean takeDamage(int dmg) {
         this.health -= dmg;
         if (this.health <= 0) {
-            System.out.println(this.type + " on kuollut!");
             return false;
         } else {
             System.out.println("Hirviöllä on " + this.health + " elämää jäljellä.");
             return true;
+        }
+    }
+
+    public boolean isDead() {
+        if (this.health <= 0) {
+            System.out.println(this.type + " on kuollut!");
+            return true;
+        } else {
+            return false;
         }
     }
 

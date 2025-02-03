@@ -36,13 +36,12 @@ public class App {
                         cave.listMonsters();
                         break;
                     case 3:
-                        int dmg = 10;
                         System.out.println("Valitse hirviö, johon hyökätä:");
                         cave.listMonsters();
                         int id = Integer.parseInt(sc.nextLine()) - 1;
                         Monster targetMonster = cave.getMonsterById(id);
                         cave.player.attack(targetMonster);
-                        if (!targetMonster.takeDamage(dmg)) {
+                        if (targetMonster.isDead()) {
                             cave.getMonsters().remove(targetMonster);
                         }
                         break;
